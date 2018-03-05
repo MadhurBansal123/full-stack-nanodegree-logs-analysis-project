@@ -6,10 +6,10 @@ database_nm = "news"
 
 # 1. Which are the three most popular articles of all time?
 sol_1 = ("select articles.title, count(*) as views "
-    "from articles inner join log on log.path "
-    "like concat('%', articles.slug, '%') "
-    "where log.status like '%200%' group by "
-    "articles.title, log.path order by views desc limit 3")
+         "from articles inner join log on log.path "
+         "like concat('%', articles.slug, '%') "
+         "where log.status like '%200%' group by "
+         "articles.title, log.path order by views desc limit 3")
 
 # 2. Who are the most popular article authors of all time?
 sol_2 = (
@@ -32,13 +32,16 @@ sol_3 = (
 
 # Storing the results
 sol_1_result = dict()
-sol_1_result['title'] = "\n1. The 3 most popular articles of all time are:\n"
+sol_1_result['title'] = ("\n1. The 3 most popular articles of"
+                         "all time are:\n")
 
 sol_2_result = dict()
-sol_2_result['title'] = """\n2. The most popular article authors of all time are:\n"""
+sol_2_result['title'] = ("\n2. The most popular article authors"
+                         "of all time are:\n")
 
 sol_3_result = dict()
-sol_3_result['title'] = """\n3. Days with more than 1% of request that lead to an error:\n"""
+sol_3_result['title'] = ("\n3. Days with more than 1% of request"
+                         "that lead to an error:\n")
 
 
 # this function returns results of queries
